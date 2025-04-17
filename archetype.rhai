@@ -6,6 +6,7 @@ context += prompt("Project Author:", "author_full", #{
 });
 
 context += prompt("Github Organization:", "organization-name", #{
+  defaults_with: "p6m-actions",
 });
 
 context += prompt("Action Name:", "action-name", #{
@@ -21,7 +22,12 @@ log(Warn, "Be sure to name your branch 'v1-dev' to allow workflow automation");
 
 display();
 
-display(render("gh repo create {{ organization-name }}/{{ action-name }} --public --source=. --remote=upstream", context));
+display(render("cd {{ action-name }}", context));
+display("git init --initial-branch=v1-dev");
+display(render("gh repo create {{ organization-name }}/{{ action-name }} --public --source=. --remote=origin", context));
+display("git add .");
+display("git commit -m 'initial commit'");
+display("git push -u origin HEAD");
 
 render(Directory("contents"), context)
 
