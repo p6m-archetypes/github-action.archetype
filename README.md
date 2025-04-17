@@ -1,4 +1,4 @@
-# Github Action
+# Github Action Archetype
 
 This is an [Archetect](https://archetect.github.io/) archetype.
 
