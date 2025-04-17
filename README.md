@@ -10,5 +10,5 @@ managed workflow and release automation.
 To generate content from this Archetype, copy and execute the following command:
 
 ```sh
-  archetect render git@github.com:p6m-dev/github-action.archetype.git
+archetect render git@github.com:p6m-dev/github-action.archetype.git
 ```
