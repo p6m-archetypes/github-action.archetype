@@ -1,5 +1,7 @@
 # Github Action Archetype
 
+![Latest Release](https://img.shields.io/github/v/release/p6m-archetypes/github-action.archetype?style=flat-square&label=Latest%20Release&color=blue)
+
 This is an [Archetect](https://archetect.github.io/) archetype.
 
 This archetype generates scaffolding for a Github Action repository with a

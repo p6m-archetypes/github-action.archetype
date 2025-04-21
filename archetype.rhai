@@ -18,12 +18,12 @@ context += prompt("Action Name:", "action-name", #{
 
 display();
 
-log(Warn, "Be sure to name your branch 'v1-dev' to allow workflow automation");
+log(Info, "Copy and paste the following commands to publish your Action:");
 
 display();
 
 display(render("cd {{ action-name }}", context));
-display("git init --initial-branch=v1-dev");
+display("git init");
 display(render("gh repo create {{ organization-name }}/{{ action-name }} --public --source=. --remote=origin", context));
 display("git add .");
 display("git commit -m 'initial commit'");

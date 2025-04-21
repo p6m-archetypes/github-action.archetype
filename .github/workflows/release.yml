@@ -1,4 +1,4 @@
-name: Release Action
+name: Release Archetype
 
 on:
   workflow_dispatch:
@@ -14,20 +14,15 @@ on:
 
 jobs:
   release:
-    name: Create Release
     runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Fetch all history and tags
+          fetch-depth: 0
 
-      - name: Run GitHub Repository Release Action
+      - name: Create Release
         uses: p6m-actions/repository-release@v1
         with:
-          release_type: ${{'{'}}{ github.event.inputs.release_type }}
-          github_token: ${{'{'}}{ secrets.GITHUB_TOKEN }}
+          release_type: ${{ github.event.inputs.release_type }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
