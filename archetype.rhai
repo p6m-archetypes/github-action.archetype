@@ -23,7 +23,7 @@ log(Info, "Copy and paste the following commands to publish your Action:");
 display();
 
 display(render("cd {{ action-name }}", context));
-display("git init");
+display("git init -b main");
 display(render("gh repo create {{ organization-name }}/{{ action-name }} --public --source=. --remote=origin", context));
 display("git add .");
 display("git commit -m 'initial commit'");
